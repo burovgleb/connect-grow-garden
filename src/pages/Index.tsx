@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import QuoteSection from "@/components/QuoteSection";
 import WhatYouGetSection from "@/components/WhatYouGetSection";
 import ScheduleSection from "@/components/ScheduleSection";
 import FAQSection from "@/components/FAQSection";
@@ -11,6 +12,7 @@ const Index = () => {
     <main>
       <HeroSection />
       <AboutSection />
+      <QuoteSection />
       <WhatYouGetSection />
       <ScheduleSection />
       <FAQSection />
