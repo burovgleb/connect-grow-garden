@@ -31,6 +31,22 @@ npm run test
 npm run lint
 ```
 
+## Деплой в GitHub Pages
+
+В репозитории настроен workflow для автоматического деплоя в GitHub Pages при каждом push в `main`:
+
+- workflow: `.github/workflows/deploy.yml`
+- кастомный домен: `demoday.recoveryvsadu.ru`
+- файл домена: `public/CNAME`
+
+Что нужно сделать на стороне GitHub и DNS:
+
+- В репозитории открыть `Settings -> Pages` и выбрать `Source: GitHub Actions`, если GitHub не переключил это автоматически после первого запуска workflow.
+- В DNS для `demoday.recoveryvsadu.ru` создать `CNAME` на `burovgleb.github.io`.
+- После первого успешного деплоя проверить, что в `Settings -> Pages` появился кастомный домен `demoday.recoveryvsadu.ru`.
+
+После этого любой push в `main` будет пересобирать и публиковать лендинг.
+
 ## Форма заявки
 
 В проекте реализована статическая inline-форма, которая:
