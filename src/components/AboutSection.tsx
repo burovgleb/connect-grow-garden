@@ -13,27 +13,30 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase mb-4 font-body">
-              Про что это
+              Что это за день
             </p>
             <h2 className="text-4xl md:text-5xl font-display font-medium text-foreground leading-tight mb-8">
-              Это не про
+              Практика в живом саду,
               <br />
-              <em className="italic">«помочь руками»</em>
+              <em className="italic">а не выезд на благоустройство</em>
             </h2>
             <div className="space-y-5 text-foreground/80 font-body text-base leading-relaxed">
               <p>
-                Работа в саду — это про&nbsp;себя. Про возможность замедлиться, 
-                почувствовать тело, увидеть результат своих действий здесь и&nbsp;сейчас.
+                Мы приглашаем провести день в саду RECOVERY* — авторской
+                живой территории, где идеи RECOVERY* x VSADU проживаются
+                на практике, а не остаются красивой декларацией.
               </p>
               <p>
-                Выдохнуть и&nbsp;вернуться к&nbsp;себе настоящему. 
-                После такого дня голова яснее, тело свободнее, 
-                а&nbsp;настроение&nbsp;— совсем другое.
+                Здесь человек работает не против природы, а вместе с ней:
+                наблюдает, как устроено место, поддерживает природные
+                процессы и через конкретные действия учится видеть сад как
+                живую систему.
               </p>
               <p>
-                Сад RECOVERY*&nbsp;— это живая экосистема, пространство наблюдения 
-                и&nbsp;практики. Здесь природа и&nbsp;человек не&nbsp;конкурируют, 
-                а&nbsp;поддерживают друг друга.
+                В программе — садовая йога, экскурсия, рабочие сессии,
+                практика наблюдения, общий обед и возможность задать
+                вопросы опытным садовникам и увидеть методы
+                восстановительного землепользования в реальном времени.
               </p>
             </div>
           </motion.div>
@@ -56,6 +59,16 @@ const AboutSection = () => {
               />
             </div>
             <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-sage/30 -z-10" />
+            <div className="absolute bottom-6 left-6 max-w-xs rounded-2xl bg-background/90 p-5 backdrop-blur-sm shadow-lg border border-border/70">
+              <p className="text-xs tracking-[0.18em] uppercase text-muted-foreground mb-2">
+                сад RECOVERY*
+              </p>
+              <p className="font-body text-sm leading-relaxed text-foreground/80">
+                Не шоурум и не просто участок, а живая доказательная
+                территория проекта: место наблюдения, эксперимента и
+                со-творчества с природой.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

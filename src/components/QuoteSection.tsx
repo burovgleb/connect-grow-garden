@@ -7,6 +7,11 @@ const QuoteSection = () => {
         <blockquote className="font-display text-2xl md:text-4xl italic font-normal text-foreground leading-snug">
           «Сад, который со временем ухаживает за&nbsp;нами»
         </blockquote>
+        <p className="mt-6 text-foreground/75 font-body max-w-2xl mx-auto leading-relaxed">
+          Волонтёрский день устроен вокруг этого принципа: заботясь о
+          живой системе сада, мы одновременно возвращаем больше опоры,
+          ясности и присутствия себе.
+        </p>
         <p className="mt-6 text-muted-foreground font-body text-sm tracking-[0.15em] uppercase">
           Принцип RECOVERY* x VSADU
         </p>

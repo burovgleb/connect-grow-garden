@@ -7,7 +7,7 @@ const Footer = () => {
             RECOVERY* x VSADU
           </p>
           <p className="font-body text-xs text-background/50 mt-1">
-            Сады как живые экосистемы
+            Живые сады по принципам восстановительного землепользования
           </p>
         </div>
         <div className="flex gap-8 text-background/50 font-body text-sm">
