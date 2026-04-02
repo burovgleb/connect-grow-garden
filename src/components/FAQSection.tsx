@@ -69,7 +69,7 @@ const faqs: Array<{ q: string; a: ReactNode }> = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-24 md:py-32 bg-secondary">
+    <section id="faq" className="py-20 md:py-24">
       <div className="max-w-2xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -78,10 +78,10 @@ const FAQSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-medium text-foreground mb-4">
+          <h2 className="brand-title mb-5 text-3xl md:text-5xl text-foreground">
             Частые вопросы
           </h2>
-          <p className="text-muted-foreground font-body leading-relaxed">
+          <p className="text-base font-light leading-[1.8] text-foreground/74">
             Собрали главное про задачи, формат дня и участие.
           </p>
         </motion.div>
@@ -97,12 +97,12 @@ const FAQSection = () => {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="bg-background border border-border rounded-lg px-6 data-[state=open]:shadow-sm transition-shadow"
+                className="brand-panel px-6 transition-shadow data-[state=open]:shadow-[0_22px_60px_-40px_rgba(31,31,31,0.32)]"
               >
-                <AccordionTrigger className="text-left font-display text-base font-semibold text-foreground hover:no-underline py-5">
+                <AccordionTrigger className="py-5 text-left font-display text-[0.85rem] font-normal uppercase tracking-[0.15em] text-foreground hover:no-underline md:text-sm">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground font-body text-sm leading-relaxed pb-5">
+                <AccordionContent className="pb-5 text-sm font-light leading-[1.75] text-foreground/78">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

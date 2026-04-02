@@ -1,4 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+@font-face {
+  font-family: "Circe";
+  src: url("./assets/fonts/circe-300.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circe";
+  src: url("./assets/fonts/circe-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circe";
+  src: url("./assets/fonts/circe-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circe";
+  src: url("./assets/fonts/circe-800.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -6,40 +36,40 @@
 
 @layer base {
   :root {
-    --background: 40 30% 97%;
-    --foreground: 150 10% 15%;
+    --background: 42 18% 95%;
+    --foreground: 0 0% 12%;
 
-    --card: 40 25% 95%;
-    --card-foreground: 150 10% 15%;
+    --card: 45 22% 97%;
+    --card-foreground: 0 0% 12%;
 
-    --popover: 40 30% 97%;
-    --popover-foreground: 150 10% 15%;
+    --popover: 45 22% 97%;
+    --popover-foreground: 0 0% 12%;
 
-    --primary: 145 30% 28%;
-    --primary-foreground: 40 30% 97%;
+    --primary: 100 31% 64%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 30% 90%;
-    --secondary-foreground: 150 10% 20%;
+    --secondary: 42 18% 92%;
+    --secondary-foreground: 0 0% 16%;
 
-    --muted: 35 20% 92%;
-    --muted-foreground: 150 5% 45%;
+    --muted: 40 14% 90%;
+    --muted-foreground: 0 0% 42%;
 
-    --accent: 25 50% 55%;
-    --accent-foreground: 40 30% 97%;
+    --accent: 154 33% 26%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 145 30% 28%;
+    --border: 35 14% 83%;
+    --input: 35 14% 83%;
+    --ring: 100 31% 64%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --earth: 25 35% 35%;
-    --earth-foreground: 40 30% 97%;
-    --sage: 145 15% 65%;
-    --warm: 35 40% 85%;
+    --earth: 154 33% 26%;
+    --earth-foreground: 0 0% 100%;
+    --sage: 100 31% 64%;
+    --warm: 42 22% 90%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -59,9 +89,35 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    background-image:
+      radial-gradient(circle at top left, hsla(var(--primary), 0.12), transparent 32%),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+    letter-spacing: 0.02em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
+  }
+
+  ::selection {
+    background-color: hsla(var(--primary), 0.38);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .brand-panel {
+    @apply rounded-[2rem] border border-black/5 bg-card/85 shadow-[0_30px_80px_-48px_rgba(31,31,31,0.28)] backdrop-blur-sm;
+  }
+
+  .brand-kicker {
+    @apply font-body text-[0.72rem] font-light uppercase tracking-[0.34em] text-foreground/40;
+  }
+
+  .brand-title {
+    @apply font-display font-normal uppercase tracking-[0.12em];
   }
 }

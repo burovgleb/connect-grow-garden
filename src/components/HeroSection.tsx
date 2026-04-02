@@ -11,95 +11,97 @@ const highlights = [
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden py-10">
       <div className="absolute inset-0">
         <img
           src={heroImage}
           alt="Утренний свет в экосаду RECOVERY*"
-          className="w-full h-full object-cover"
+          className="h-full w-full scale-[1.03] object-cover"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-foreground/40" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(246,244,239,0.74),rgba(238,234,227,0.86))]" />
       </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-6 inline-flex rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-2 text-sm font-body text-primary-foreground/90 backdrop-blur-sm"
-        >
-          11 апреля 2026
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-medium text-primary-foreground leading-[0.95] mb-8"
-        >
-          Волонтёрский
-          <br />
-          <em className="italic font-normal">день в живом саду</em>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-primary-foreground/85 font-body text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-8"
-        >
-          День живой практики, наблюдения и заботы о земле: познакомимся
-          с принципами восстановительного землепользования, поработаем в
-          саду RECOVERY*, начнём утро с йоги и завершим день общим обедом
-          и кругом вопросов.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.65 }}
-          className="flex flex-wrap justify-center gap-3 mb-10"
-        >
-          {highlights.map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-2 text-sm text-primary-foreground/85 backdrop-blur-sm"
-            >
-              {item}
-            </span>
-          ))}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Button variant="hero" size="lg" asChild>
-            <a href="#register">Оставить заявку</a>
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-primary-foreground/50 bg-primary-foreground text-primary hover:bg-primary-foreground/90 hover:text-primary font-display tracking-wide shadow-lg"
-            asChild
+      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+        <div className="brand-panel px-6 py-10 md:px-10 md:py-12 lg:px-14">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-6 inline-flex rounded-full border border-foreground/10 bg-background/72 px-5 py-2 text-[0.72rem] font-body font-light uppercase tracking-[0.34em] text-foreground/72"
           >
-            <a href="#schedule">Как пройдёт день</a>
-          </Button>
-        </motion.div>
+            11 апреля 2026
+          </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          className="mt-6 text-primary-foreground/65 font-body text-sm leading-relaxed max-w-xl mx-auto"
-        >
-          Участие бесплатное. После заявки мы пришлём адрес сада, список
-          вещей и детали общего чата.
-        </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="font-display text-[clamp(2.1rem,7vw,5.2rem)] font-light uppercase tracking-[0.12em] text-foreground leading-[1.08] md:tracking-[0.16em] mb-6"
+          >
+            Волонтёрский
+            <br />
+            день в живом саду
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mx-auto mb-8 max-w-2xl text-base font-light leading-[1.85] text-foreground/78 md:text-lg"
+          >
+            День живой практики, наблюдения и заботы о земле: познакомимся
+            с принципами восстановительного землепользования, поработаем в
+            саду RECOVERY*, начнём утро с йоги и завершим день общим обедом
+            и кругом вопросов.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.65 }}
+            className="mb-10 flex flex-wrap justify-center gap-3"
+          >
+            {highlights.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-foreground/10 bg-background/68 px-4 py-2 text-[0.7rem] font-light uppercase tracking-[0.24em] text-foreground/74"
+              >
+                {item}
+              </span>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="flex flex-col justify-center gap-4 sm:flex-row"
+          >
+            <Button variant="hero" size="lg" asChild>
+              <a href="#register">Оставить заявку</a>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-background/90 shadow-[0_18px_50px_-32px_rgba(31,31,31,0.25)]"
+              asChild
+            >
+              <a href="#schedule">Как пройдёт день</a>
+            </Button>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="mx-auto mt-6 max-w-xl text-sm font-light leading-[1.85] text-foreground/62"
+          >
+            Участие бесплатное. После заявки мы пришлём адрес сада, список
+            вещей и детали общего чата.
+          </motion.p>
+        </div>
       </div>
 
       <motion.div
@@ -108,8 +110,8 @@ const HeroSection = () => {
         transition={{ duration: 1, delay: 1.2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
       >
-        <div className="w-px h-16 bg-primary-foreground/30 mx-auto mb-2" />
-        <p className="text-primary-foreground/50 text-xs tracking-[0.2em] uppercase font-body">
+        <div className="mx-auto mb-2 h-16 w-px bg-foreground/14" />
+        <p className="text-foreground/42 text-xs tracking-[0.28em] uppercase font-body font-light">
           Дальше
         </p>
       </motion.div>

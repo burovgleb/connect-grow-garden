@@ -26,7 +26,7 @@ const items = [
 
 const WhatYouGetSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-secondary">
+    <section className="py-20 md:py-24">
       <div className="max-w-5xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,10 +35,10 @@ const WhatYouGetSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-medium text-foreground mb-4">
+          <h2 className="brand-title text-3xl md:text-5xl text-foreground mb-5">
             Что даёт день в саду
           </h2>
-          <p className="text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed">
+          <p className="mx-auto max-w-2xl text-base font-light leading-[1.8] text-foreground/74">
             Это не только волонтёрский опыт. Это возможность почувствовать
             тело, увидеть результат своих действий здесь и сейчас и
             вернуться домой с другим качеством внимания.
@@ -53,13 +53,15 @@ const WhatYouGetSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="bg-background rounded-lg p-8 border border-border"
+              className="brand-panel p-8"
             >
-              <item.icon className="w-8 h-8 text-primary mb-5 stroke-[1.5]" />
-              <h3 className="text-xl font-display font-semibold text-foreground mb-3">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-foreground/10 bg-background/85">
+                <item.icon className="h-6 w-6 text-accent stroke-[1.5]" />
+              </div>
+              <h3 className="mb-3 font-display text-base font-medium uppercase tracking-[0.14em] text-foreground">
                 {item.title}
               </h3>
-              <p className="text-muted-foreground font-body text-sm leading-relaxed">
+              <p className="text-sm font-light leading-[1.75] text-foreground/76">
                 {item.text}
               </p>
             </motion.div>

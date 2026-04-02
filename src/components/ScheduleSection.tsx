@@ -69,7 +69,7 @@ const tasks = [
 
 const ScheduleSection = () => {
   return (
-    <section id="schedule" className="py-24 md:py-32 bg-background">
+    <section id="schedule" className="py-20 md:py-24">
       <div className="max-w-5xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -78,13 +78,13 @@ const ScheduleSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase mb-4 font-body">
+          <p className="brand-kicker mb-4">
             Расписание
           </p>
-          <h2 className="text-4xl md:text-5xl font-display font-medium text-foreground">
+          <h2 className="brand-title text-3xl md:text-5xl text-foreground">
             Как пройдёт день
           </h2>
-          <p className="text-muted-foreground font-body max-w-2xl mx-auto mt-4 leading-relaxed">
+          <p className="mx-auto mt-4 max-w-2xl text-base font-light leading-[1.8] text-foreground/74">
             Комфортный ритм с рабочими сессиями, естественными паузами,
             наблюдением и общением. Общая длительность активностей —
             6 часов 45 минут.
@@ -93,7 +93,7 @@ const ScheduleSection = () => {
 
         <div className="relative max-w-3xl mx-auto">
           {/* Vertical line */}
-          <div className="absolute left-[52px] md:left-[68px] top-0 bottom-0 w-px bg-border" />
+          <div className="absolute left-[52px] top-0 bottom-0 w-px bg-foreground/10 md:left-[68px]" />
 
           <div className="space-y-0">
             {schedule.map((item, i) => (
@@ -103,21 +103,21 @@ const ScheduleSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="flex gap-6 md:gap-8 py-6 group"
+                className="group flex gap-6 py-6 md:gap-8"
               >
                 <div className="flex-shrink-0 w-[44px] md:w-[56px] text-right">
-                  <span className="font-display text-lg md:text-xl font-medium text-primary">
+                  <span className="font-body text-xs font-light uppercase tracking-[0.24em] text-primary md:text-sm">
                     {item.time}
                   </span>
                 </div>
                 <div className="relative flex-shrink-0 mt-1.5">
-                  <div className="w-3 h-3 rounded-full bg-sage border-2 border-background ring-2 ring-border group-hover:ring-primary transition-colors duration-300" />
+                  <div className="h-3 w-3 rounded-full border-2 border-background bg-primary ring-2 ring-border transition-colors duration-300 group-hover:ring-primary" />
                 </div>
                 <div className="pb-2">
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-1">
+                  <h3 className="mb-2 font-display text-sm font-medium uppercase tracking-[0.12em] text-foreground md:text-base">
                     {item.title}
                   </h3>
-                  <p className="text-muted-foreground font-body text-sm leading-relaxed">
+                  <p className="text-sm font-light leading-[1.75] text-foreground/76">
                     {item.desc}
                   </p>
                 </div>
@@ -132,19 +132,19 @@ const ScheduleSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="rounded-2xl border border-border bg-secondary p-8"
+            className="brand-panel p-8"
           >
-            <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-body mb-4">
+            <p className="brand-kicker mb-4">
               С чем будем работать
             </p>
-            <h3 className="text-2xl md:text-3xl font-display font-medium text-foreground mb-6">
+            <h3 className="brand-title mb-6 text-2xl md:text-3xl text-foreground">
               Конкретные задачи дня
             </h3>
             <div className="grid sm:grid-cols-2 gap-3">
               {tasks.map((task) => (
                 <div
                   key={task}
-                  className="rounded-xl border border-border/80 bg-background/70 px-4 py-4 text-sm leading-relaxed text-foreground/80"
+                  className="rounded-[1.4rem] border border-foreground/8 bg-background/80 px-4 py-4 text-sm font-light leading-[1.7] text-foreground/82"
                 >
                   {task}
                 </div>
@@ -157,12 +157,12 @@ const ScheduleSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-2xl border border-border bg-warm p-8"
+            className="brand-panel p-8"
           >
-            <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-body mb-4">
+            <p className="brand-kicker mb-4">
               Ритм дня
             </p>
-            <div className="space-y-4 text-sm leading-relaxed text-foreground/80">
+            <div className="space-y-4 text-sm font-light leading-[1.75] text-foreground/78">
               <p>
                 Работаем по зонам и меняемся в течение дня, чтобы получить
                 разный опыт и не утомиться однообразием.

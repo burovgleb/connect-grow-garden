@@ -232,7 +232,7 @@ const LeadCaptureForm = ({ config = leadFormConfig }: LeadCaptureFormProps) => {
 
         <div className="grid gap-5 md:grid-cols-2">
           <div className="space-y-2">
-            <Label htmlFor="lead-name" className="text-primary-foreground/90">
+            <Label htmlFor="lead-name" className="text-[0.68rem] font-light uppercase tracking-[0.24em] text-foreground/58">
               Имя
             </Label>
             <Input
@@ -243,21 +243,21 @@ const LeadCaptureForm = ({ config = leadFormConfig }: LeadCaptureFormProps) => {
               placeholder="Как к вам обращаться"
               autoComplete="name"
               className={cn(
-                "h-12 border-primary-foreground/20 bg-primary-foreground text-foreground placeholder:text-muted-foreground",
+                "border-foreground/10 bg-background/82 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.45)]",
                 errors.name && "border-destructive focus-visible:ring-destructive",
               )}
               aria-invalid={Boolean(errors.name)}
               aria-describedby={errors.name ? "lead-name-error" : undefined}
             />
             {errors.name ? (
-              <p id="lead-name-error" className="text-sm text-primary-foreground/80">
+              <p id="lead-name-error" className="text-sm font-light text-foreground/70">
                 {errors.name}
               </p>
             ) : null}
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="lead-contact" className="text-primary-foreground/90">
+            <Label htmlFor="lead-contact" className="text-[0.68rem] font-light uppercase tracking-[0.24em] text-foreground/58">
               Телефон или Telegram
             </Label>
             <Input
@@ -268,14 +268,14 @@ const LeadCaptureForm = ({ config = leadFormConfig }: LeadCaptureFormProps) => {
               placeholder="+7... или @username"
               autoComplete="tel"
               className={cn(
-                "h-12 border-primary-foreground/20 bg-primary-foreground text-foreground placeholder:text-muted-foreground",
+                "border-foreground/10 bg-background/82 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.45)]",
                 errors.contact && "border-destructive focus-visible:ring-destructive",
               )}
               aria-invalid={Boolean(errors.contact)}
               aria-describedby={errors.contact ? "lead-contact-error" : undefined}
             />
             {errors.contact ? (
-              <p id="lead-contact-error" className="text-sm text-primary-foreground/80">
+              <p id="lead-contact-error" className="text-sm font-light text-foreground/70">
                 {errors.contact}
               </p>
             ) : null}
@@ -283,7 +283,7 @@ const LeadCaptureForm = ({ config = leadFormConfig }: LeadCaptureFormProps) => {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="lead-comment" className="text-primary-foreground/90">
+          <Label htmlFor="lead-comment" className="text-[0.68rem] font-light uppercase tracking-[0.24em] text-foreground/58">
             Комментарий
           </Label>
           <Textarea
@@ -292,62 +292,62 @@ const LeadCaptureForm = ({ config = leadFormConfig }: LeadCaptureFormProps) => {
             value={values.comment}
             onChange={handleTextChange("comment")}
             placeholder="Можно коротко рассказать о себе, вопросе или удобном формате связи"
-            className="min-h-[120px] border-primary-foreground/20 bg-primary-foreground text-foreground placeholder:text-muted-foreground"
+            className="min-h-[140px] border-foreground/10 bg-background/82 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.45)]"
           />
         </div>
 
-        <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 p-4">
+        <div className="rounded-[1.5rem] border border-foreground/8 bg-background/70 p-5">
           <div className="flex items-start gap-3">
             <Checkbox
               id="lead-consent"
               checked={values.consent}
               onCheckedChange={(checked) => handleConsentChange(checked === true)}
               className={cn(
-                "mt-1 border-primary-foreground/40 data-[state=checked]:bg-primary-foreground data-[state=checked]:text-primary",
+                "mt-1 border-foreground/28 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground",
                 errors.consent && "border-destructive",
               )}
               aria-invalid={Boolean(errors.consent)}
             />
             <div className="space-y-2">
-              <Label htmlFor="lead-consent" className="text-sm leading-relaxed text-primary-foreground/90">
+              <Label htmlFor="lead-consent" className="text-sm font-light leading-[1.75] text-foreground/80">
                 Я согласен(а) на обработку персональных данных и принимаю{" "}
                 <a
                   href={config.policyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline underline-offset-4"
+                  className="underline underline-offset-4 transition-colors hover:text-foreground"
                 >
                   политику проекта
                 </a>
                 .
               </Label>
               {errors.consent ? (
-                <p className="text-sm text-primary-foreground/80">{errors.consent}</p>
+                <p className="text-sm font-light text-foreground/70">{errors.consent}</p>
               ) : null}
             </div>
           </div>
         </div>
 
         <div className="space-y-4">
-          <p className="text-sm leading-relaxed text-primary-foreground/70">
+          <p className="text-sm font-light leading-[1.75] text-foreground/62">
             После отправки заявка сохранится в рабочем реестре, а команда получит уведомление
             в Telegram.
           </p>
 
           {submitState === "success" ? (
-            <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-3 text-sm leading-relaxed text-primary-foreground">
+            <div className="rounded-[1.4rem] border border-foreground/10 bg-background/82 px-4 py-3 text-sm font-light leading-[1.75] text-foreground/88">
               {feedbackMessage}
             </div>
           ) : null}
 
           {submitState === "error" ? (
-            <div className="rounded-2xl border border-destructive/50 bg-destructive/10 px-4 py-3 text-sm leading-relaxed text-primary-foreground">
+            <div className="rounded-[1.4rem] border border-destructive/40 bg-destructive/8 px-4 py-3 text-sm font-light leading-[1.75] text-foreground/88">
               {feedbackMessage}
             </div>
           ) : null}
 
           {!isConfigured ? (
-            <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-3 text-sm leading-relaxed text-primary-foreground/80">
+            <div className="rounded-[1.4rem] border border-foreground/10 bg-background/76 px-4 py-3 text-sm font-light leading-[1.75] text-foreground/74">
               Форма требует подключения Apps Script web app URL. Инструкция добавлена в
               README и `docs/lead-form-setup.md`.
             </div>
@@ -356,10 +356,10 @@ const LeadCaptureForm = ({ config = leadFormConfig }: LeadCaptureFormProps) => {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button
               type="submit"
-              variant="outline"
+              variant="hero"
               size="lg"
               disabled={submitState === "submitting" || !isConfigured}
-              className="border-primary-foreground/50 bg-primary-foreground text-primary hover:bg-primary-foreground/90 hover:text-primary font-display tracking-wide text-base px-10 py-6 h-auto shadow-lg disabled:opacity-60"
+              className="h-auto px-10 py-6 disabled:opacity-60"
             >
               {submitState === "submitting" ? "Отправляем..." : "Отправить заявку"}
             </Button>

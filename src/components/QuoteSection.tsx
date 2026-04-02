@@ -2,17 +2,17 @@ import { memo } from "react";
 
 const QuoteSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-warm">
+    <section className="py-16 md:py-20">
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <blockquote className="font-display text-2xl md:text-4xl italic font-normal text-foreground leading-snug">
+        <blockquote className="brand-title text-2xl md:text-4xl text-foreground leading-[1.3]">
           «Сад, который со временем ухаживает за&nbsp;нами»
         </blockquote>
-        <p className="mt-6 text-foreground/75 font-body max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-6 max-w-2xl mx-auto text-base font-light leading-[1.8] text-foreground/78">
           Волонтёрский день устроен вокруг этого принципа: заботясь о
           живой системе сада, мы одновременно возвращаем больше опоры,
           ясности и присутствия себе.
         </p>
-        <p className="mt-6 text-muted-foreground font-body text-sm tracking-[0.15em] uppercase">
+        <p className="brand-kicker mt-6">
           Принцип RECOVERY* x VSADU
         </p>
       </div>

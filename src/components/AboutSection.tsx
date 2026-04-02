@@ -3,7 +3,7 @@ import handsSoil from "@/assets/hands-soil.jpg";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 md:py-32 bg-background">
+    <section id="about" className="py-20 md:py-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -12,15 +12,15 @@ const AboutSection = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase mb-4 font-body">
+            <p className="brand-kicker mb-5">
               Что это за день
             </p>
-            <h2 className="text-4xl md:text-5xl font-display font-medium text-foreground leading-tight mb-8">
-              Практика в живом саду,
+            <h2 className="brand-title text-3xl md:text-5xl text-foreground leading-[1.2] mb-8">
+              Практика в живом саду
               <br />
-              <em className="italic">а не выезд на благоустройство</em>
+              <span className="text-muted-foreground">а не выезд на благоустройство</span>
             </h2>
-            <div className="space-y-5 text-foreground/80 font-body text-base leading-relaxed">
+            <div className="space-y-6 text-base font-light leading-[1.85] text-foreground/84">
               <p>
                 Мы приглашаем провести день в саду RECOVERY* — авторской
                 живой территории, где идеи RECOVERY* x VSADU проживаются
@@ -48,7 +48,8 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-lg overflow-hidden">
+            <div className="overflow-hidden rounded-[2rem] border border-black/5 shadow-[0_30px_80px_-48px_rgba(31,31,31,0.28)]">
+              <div className="aspect-[4/5] overflow-hidden">
               <img
                 src={handsSoil}
                 alt="Руки в земле — контакт с живой средой"
@@ -57,13 +58,14 @@ const AboutSection = () => {
                 width={1024}
                 height={1024}
               />
+              </div>
             </div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-sage/30 -z-10" />
-            <div className="absolute bottom-6 left-6 max-w-xs rounded-2xl bg-background/90 p-5 backdrop-blur-sm shadow-lg border border-border/70">
-              <p className="text-xs tracking-[0.18em] uppercase text-muted-foreground mb-2">
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-primary/18 blur-xl -z-10" />
+            <div className="brand-panel absolute bottom-6 left-6 max-w-xs p-5">
+              <p className="brand-kicker mb-2">
                 сад RECOVERY*
               </p>
-              <p className="font-body text-sm leading-relaxed text-foreground/80">
+              <p className="text-sm font-light leading-[1.75] text-foreground/82">
                 Не шоурум и не просто участок, а живая доказательная
                 территория проекта: место наблюдения, эксперимента и
                 со-творчества с природой.
