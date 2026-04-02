@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-garden.jpg";
+import heroImage from "@/assets/hero-crocus-spring.jpg";
 
 const highlights = [
   "Без опыта",
@@ -15,9 +15,9 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Утренний свет в экосаду RECOVERY*"
-          className="h-full w-full scale-[1.03] object-cover"
-          width={1920}
+          alt="Крокусы в саду RECOVERY* ранней весной"
+          className="h-full w-full scale-[1.02] object-cover object-center"
+          width={1620}
           height={1080}
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(246,244,239,0.74),rgba(238,234,227,0.86))]" />

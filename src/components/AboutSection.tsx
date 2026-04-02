@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import handsSoil from "@/assets/hands-soil.jpg";
+import recoveryGardenImage from "@/assets/recovery-garden-section.jpg";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const AboutSection = () => {
   return (
@@ -49,28 +57,77 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="overflow-hidden rounded-[2rem] border border-black/5 shadow-[0_30px_80px_-48px_rgba(31,31,31,0.28)]">
-              <div className="aspect-[4/5] overflow-hidden">
-              <img
-                src={handsSoil}
-                alt="Руки в земле — контакт с живой средой"
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width={1024}
-                height={1024}
-              />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={recoveryGardenImage}
+                  alt="Сад RECOVERY* с водой, деревянными настилами и домом на закате"
+                  className="h-full w-full object-cover object-center"
+                  loading="lazy"
+                  width={1280}
+                  height={960}
+                />
               </div>
             </div>
             <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-primary/18 blur-xl -z-10" />
-            <div className="brand-panel absolute bottom-6 left-6 max-w-xs p-5">
-              <p className="brand-kicker mb-2">
-                сад RECOVERY*
-              </p>
-              <p className="text-sm font-light leading-[1.75] text-foreground/82">
-                Не шоурум и не просто участок, а живая доказательная
-                территория проекта: место наблюдения, эксперимента и
-                со-творчества с природой.
-              </p>
-            </div>
+            <Dialog>
+              <div className="brand-panel absolute bottom-6 left-6 max-w-[19rem] p-5">
+                <p className="brand-kicker mb-2">
+                  сад RECOVERY*
+                </p>
+                <p className="text-sm font-light leading-[1.75] text-foreground/82">
+                  Один из первых экосадов в России: живая территория, где
+                  работа с почвой, биоразнообразием и естественным циклом
+                  становится видимой во времени.
+                </p>
+                <DialogTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className="mt-4 h-auto px-5 py-3 text-[0.68rem] tracking-[0.28em]"
+                  >
+                    Узнать больше
+                  </Button>
+                </DialogTrigger>
+              </div>
+              <DialogContent className="brand-panel max-h-[90vh] max-w-3xl gap-0 overflow-hidden border-black/5 bg-card/95 p-0 shadow-[0_36px_96px_-44px_rgba(31,31,31,0.42)]">
+                <div className="aspect-[16/9] overflow-hidden border-b border-black/5">
+                  <img
+                    src={recoveryGardenImage}
+                    alt="Сад RECOVERY* с водой, деревянными настилами и домом на закате"
+                    className="h-full w-full object-cover object-center"
+                    loading="lazy"
+                    width={1280}
+                    height={960}
+                  />
+                </div>
+                <div className="p-6 md:p-8">
+                  <DialogHeader className="text-left">
+                    <p className="brand-kicker mb-3">
+                      сад RECOVERY*
+                    </p>
+                    <DialogTitle className="brand-title text-2xl leading-[1.1] text-foreground md:text-[2rem]">
+                      Живой сад, который можно увидеть глубже
+                    </DialogTitle>
+                  </DialogHeader>
+                  <div className="mt-6 space-y-5 text-base font-light leading-[1.85] text-foreground/84">
+                    <p>
+                      Сад RECOVERY* — один из первых экосадов в России.
+                      Здесь последовательно работают с почвой,
+                      биоразнообразием и органическим циклом, чтобы сделать
+                      территорию более устойчивой, а уход за ней — более
+                      естественным и менее затратным.
+                    </p>
+                    <p>
+                      Это пространство интересно одновременно как живая
+                      экосистема и как сад, созданный в соответствии с
+                      образом жизни и интересами владельцев. RECOVERY*
+                      отмечен многочисленными наградами в сфере
+                      ландшафтного дизайна в России и за рубежом, а также
+                      становился героем телевизионных и YouTube-проектов.
+                    </p>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </motion.div>
         </div>
       </div>
