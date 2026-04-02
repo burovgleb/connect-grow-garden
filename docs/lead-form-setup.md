@@ -42,6 +42,7 @@
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
 - `LEADS_SHEET_NAME`
+- `LOGS_SHEET_NAME`
 - `SPREADSHEET_ID`
 
 Где:
@@ -49,6 +50,7 @@
 - `TELEGRAM_BOT_TOKEN` — токен бота из `@BotFather`
 - `TELEGRAM_CHAT_ID` — id Telegram-группы
 - `LEADS_SHEET_NAME` — имя листа, например `Заявки`
+- `LOGS_SHEET_NAME` — имя листа с логами, например `Logs`
 - `SPREADSHEET_ID` — id Google Sheet из адресной строки
 
 Пример URL таблицы:
@@ -130,7 +132,38 @@ VITE_POLICY_URL="https://recoveryvsadu.ru/#policy"
    - в таблице появилась новая строка
    - в Telegram-группу пришло сообщение
 
-## 10. Важная юридическая заметка
+## 10. Логи Telegram и ошибок
+
+Скрипт автоматически пишет служебные записи в отдельный лист `Logs`.
+
+Рекомендуемые колонки создаются автоматически:
+
+- `Timestamp`
+- `Status`
+- `Stage`
+- `Name`
+- `Contact`
+- `Telegram Status`
+- `Details`
+
+Что туда попадает:
+
+- успешная отправка уведомления в Telegram
+- ошибка Telegram API
+- ошибка конфигурации
+- ошибка валидации
+- honeypot-запросы
+
+Если уведомления перестали приходить, сначала проверьте лист `Logs`:
+
+- `Status = ok` и `Stage = telegram` — уведомление ушло
+- `Status = error` и `Stage = telegram` — Telegram вернул ошибку
+- `Status = error` и `Stage = request` — упал сам запрос или таблица
+- `Telegram Status` и `Details` обычно содержат HTTP-код и текст ответа Telegram
+
+Важно: после обновления кода Apps Script нужно заново сделать `Deploy -> Manage deployments -> Edit -> Deploy`, иначе опубликованный web app продолжит работать на старой версии.
+
+## 11. Важная юридическая заметка
 
 Сейчас политика по умолчанию ведёт на:
 

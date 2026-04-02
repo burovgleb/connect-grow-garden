@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  VITE_LEAD_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbzB1TPfDvAkPU2YhyKdsciwE3USeYyyP3G19WBcw2N9pOORawsuuZjwYP7nBAL6tjEw/exec"
+  VITE_LEAD_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbxUa0aknTXCnUEIM14yyeF2r9B62m_N-ppdGveKoQaaGV-UbULB_P_dUKIollBEQ2cz/exec"
   VITE_LEAD_CONSENT_VALUE: "Да, согласен(а)"
   VITE_POLICY_URL: "https://recoveryvsadu.ru/#policy"
 
