@@ -93,14 +93,15 @@ const InvitationSection = () => {
         >
           <div className="max-w-3xl">
             <p className="brand-kicker mb-3 text-foreground/46">
-              Ждём вас 11 апреля
+              Ждём вас 16 мая
             </p>
             <p className="brand-title text-2xl leading-[1.2] text-foreground md:text-3xl">
               Приходите провести день в саду RECOVERY*
             </p>
             <p className="mt-3 text-base font-light leading-[1.8] text-foreground/82">
-              Познакомимся с садом в начале сезона и проведём день рядом
-              с людьми, которые проживают эту практику изнутри.
+              Группа камерная — всего 8 участников. Будем работать рядом
+              с людьми, которые проживают эту практику изнутри, и глубже
+              войдём в сезонный ритм сада.
             </p>
           </div>
           <div className="shrink-0">

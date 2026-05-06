@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-crocus-spring.jpg";
 
 const highlights = [
-  "Без опыта",
-  "До 15 участников",
+  "Для садовников с опытом",
+  "8 участников",
   "Йога и обед включены",
-  "Практика в живом саду",
+  "Компост и огород",
 ];
 
 const HeroSection = () => {
@@ -31,7 +31,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="mb-6 inline-flex rounded-full border border-foreground/10 bg-background/72 px-5 py-2 text-[0.72rem] font-body font-light uppercase tracking-[0.34em] text-foreground/72"
           >
-            11 апреля 2026
+            16 мая 2026
           </motion.div>
 
           <motion.h1
@@ -40,9 +40,9 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="hero-title font-display text-[clamp(2.1rem,7vw,5.2rem)] font-light uppercase tracking-[0.12em] text-foreground leading-[1.08] md:tracking-[0.16em] mb-6"
           >
-            Волонтёрский
+            Камерный день
             <br />
-            день в живом саду
+            живой практики
           </motion.h1>
 
           <motion.p
@@ -51,10 +51,10 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="hero-copy mx-auto mb-8 max-w-2xl text-base font-light leading-[1.85] text-foreground/78 md:text-lg"
           >
-            День живой практики, наблюдения и заботы о земле:
-            познакомимся с принципами восстановительного землепользования
-            во время трудотерапии в саду RECOVERY*, дополним этот процесс
-            йогой, вкусным обедом и общением.
+            Камерный день для тех, кто уже знаком с садовой работой:
+            будем входить в сезон через компост, огород и точные весенние
+            задачи в саду RECOVERY*, а дополнит этот процесс йога,
+            вкусный обед и общение.
           </motion.p>
 
           <motion.div
@@ -98,8 +98,8 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="hero-note mx-auto mt-6 max-w-xl text-sm font-light leading-[1.85] text-foreground/62"
           >
-            Участие бесплатное. После заявки мы пришлём адрес сада, список
-            вещей и детали общего чата.
+            Группа камерная — всего 8 участников. После заявки мы
+            пришлём адрес сада, список вещей и детали общего чата.
           </motion.p>
 
           <motion.a
