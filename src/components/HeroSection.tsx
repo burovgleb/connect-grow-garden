@@ -6,7 +6,8 @@ const highlights = [
   "Для садовников с опытом",
   "8 участников",
   "Йога и обед включены",
-  "Компост и огород",
+  "Компост",
+  "Пермакультурный огород",
 ];
 
 const HeroSection = () => {
@@ -40,9 +41,9 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="hero-title font-display text-[clamp(2.1rem,7vw,5.2rem)] font-light uppercase tracking-[0.12em] text-foreground leading-[1.08] md:tracking-[0.16em] mb-6"
           >
-            Камерный день
+            День живой практики
             <br />
-            живой практики
+            в саду RECOVERY*
           </motion.h1>
 
           <motion.p
@@ -51,10 +52,11 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="hero-copy mx-auto mb-8 max-w-2xl text-base font-light leading-[1.85] text-foreground/78 md:text-lg"
           >
-            Камерный день для тех, кто уже знаком с садовой работой:
-            будем входить в сезон через компост, огород и точные весенние
-            задачи в саду RECOVERY*, а дополнит этот процесс йога,
-            вкусный обед и общение.
+            Камерный день для профессиональных садовников и опытных
+            любителей: будем входить в сезон через созерцание природных
+            процессов в экосаду, запуск компоста и точечные весенние задачи
+            в саду RECOVERY*, а дополнит этот процесс йога, вкусный обед и
+            общение.
           </motion.p>
 
           <motion.div
