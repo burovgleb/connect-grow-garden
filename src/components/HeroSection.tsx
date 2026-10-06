@@ -1,13 +1,16 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-crocus-spring.jpg";
+import heroImage from "@/assets/hero-garden-autumn.jpg";
 
 const highlights = [
-  "Для садовников с опытом",
-  "8 участников",
+  "Для новичков",
+  "Для профессиональных садовников",
+  "Для землевладельцев",
+  "10 человек",
   "Йога и обед включены",
   "Компост",
   "Пермакультурный огород",
+  "Мульчирование",
 ];
 
 const HeroSection = () => {
@@ -16,12 +19,11 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Крокусы в саду RECOVERY* ранней весной"
+          alt="Сад RECOVERY* в осеннем свете"
           className="h-full w-full scale-[1.02] object-cover object-center"
-          width={1620}
-          height={1080}
+          width={2200}
+          height={1650}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(246,244,239,0.74),rgba(238,234,227,0.86))]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
@@ -32,7 +34,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="mb-6 inline-flex rounded-full border border-foreground/10 bg-background/72 px-5 py-2 text-[0.72rem] font-body font-light uppercase tracking-[0.34em] text-foreground/72"
           >
-            16 мая 2026
+            24 октября 2026
           </motion.div>
 
           <motion.h1
@@ -52,11 +54,12 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="hero-copy mx-auto mb-8 max-w-2xl text-base font-light leading-[1.85] text-foreground/78 md:text-lg"
           >
-            Камерный день для профессиональных садовников и опытных
-            любителей: будем входить в сезон через созерцание природных
-            процессов в экосаду, запуск компоста и точечные весенние задачи
-            в саду RECOVERY*, а дополнит этот процесс йога, вкусный обед и
-            общение.
+            Познавательный и заряжающий день для всех, кто интересуется
+            природой, экологией и садоводством: будем закрывать сезон через
+            созерцание природных процессов в экосаду, восстановительные
+            работы в отдельных зонах, приготовление компоста и компостного
+            чая, посадки луковичных, а дополнят этот процесс йога, медитация,
+            вкусный обед и общение с единомышленниками.
           </motion.p>
 
           <motion.div
@@ -100,8 +103,8 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="hero-note mx-auto mt-6 max-w-xl text-sm font-light leading-[1.85] text-foreground/62"
           >
-            Группа камерная — всего 8 участников. После заявки мы
-            пришлём адрес сада, список вещей и детали общего чата.
+            Группа не более 12 человек. После заявки мы пришлём адрес сада,
+            список вещей и детали общего чата.
           </motion.p>
 
           <motion.a

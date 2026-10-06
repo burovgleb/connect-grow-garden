@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import invitationImage from "@/assets/april-invitation-section.jpg";
+import invitationImage from "@/assets/organizers-autumn.jpg";
 import { Button } from "@/components/ui/button";
 
 const InvitationSection = () => {
@@ -31,23 +31,23 @@ const InvitationSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="mt-10 grid gap-6 lg:grid-cols-[0.78fr_1.22fr] lg:items-start"
+          className="mt-10 grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-center"
         >
           <figure className="brand-panel overflow-hidden p-4 md:p-5">
             <div className="overflow-hidden rounded-[1.75rem] border border-black/5">
-              <div className="aspect-[5/6] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={invitationImage}
-                  alt="Даша Бурова и Павел Дерикошма в саду RECOVERY* ранней весной"
-                  className="h-full w-full object-cover object-[center_18%]"
+                  alt="Павел Дерикошма и Даша Бурова в саду RECOVERY* осенью"
+                  className="h-full w-full object-cover object-center"
                   loading="lazy"
-                  width={720}
-                  height={1280}
+                  width={1280}
+                  height={853}
                 />
               </div>
             </div>
             <figcaption className="px-1 pt-4 text-sm font-light leading-[1.75] text-foreground/64">
-              Даша Бурова и Павел Дерикошма в саду RECOVERY* ранней весной.
+              Павел Дерикошма и Даша Бурова в саду RECOVERY* осенью.
             </figcaption>
           </figure>
 
@@ -93,16 +93,15 @@ const InvitationSection = () => {
         >
           <div className="max-w-3xl">
             <p className="brand-kicker mb-3 text-foreground/46">
-              Ждём вас 16 мая
+              Ждём вас 24 октября
             </p>
             <p className="brand-title text-2xl leading-[1.2] text-foreground md:text-3xl">
               Проведите день в саду RECOVERY*
             </p>
             <p className="mt-3 text-base font-light leading-[1.8] text-foreground/82">
-              Группа камерная — всего 8 участников. Будем работать в мягком
-              режиме, уделяя внимание деталям и новым знаниям, и подготовимся
-              к новому сезону, получив порцию вдохновения и открыв работающие
-              экологичные подходы.
+              Группа небольшая — 10–12 человек. С удовольствием дружно закроем
+              сезон, позаботившись о месте, друг о друге и о себе через мягкие
+              и глубокие практики и по-настоящему экологичные работы в саду.
             </p>
           </div>
           <div className="shrink-0">

@@ -315,7 +315,7 @@ const HowItWasSection = () => {
           className="mx-auto mb-12 max-w-3xl text-center"
         >
           <p className="brand-kicker mb-4">
-            Как это было 11 апреля
+            Как это было весной
           </p>
           <h2 className="brand-title text-3xl text-foreground md:text-5xl">
             Отчёт с волонтёрского дня для новичков
