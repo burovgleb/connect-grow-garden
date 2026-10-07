@@ -51,7 +51,7 @@ npm run lint
 
 В проекте реализована статическая inline-форма, которая:
 
-- отправляет заявку в Google Apps Script web app через скрытый `iframe`
+- отправляет заявку в Google Apps Script web app через `fetch` в режиме `no-cors`
 - сохраняет ответы напрямую в Google Sheet
 - поддерживает Telegram-уведомления из того же Apps Script
 

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 
 import { leadFormConfig, isLeadFormConfigured, type LeadFormConfig } from "@/config/leadForm";
 import { Button } from "@/components/ui/button";
@@ -74,20 +74,8 @@ const LeadCaptureForm = ({ config = leadFormConfig }: LeadCaptureFormProps) => {
   const [submitState, setSubmitState] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [feedbackMessage, setFeedbackMessage] = useState("");
 
-  const formRef = useRef<HTMLFormElement>(null);
-  const timeoutRef = useRef<number | null>(null);
-  const awaitingSubmitRef = useRef(false);
-
   const isConfigured = isLeadFormConfigured(config);
   const utmParams = useMemo(() => getUtmParams(), []);
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        window.clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
 
   const clearFieldError = (field: keyof LeadFormErrors) => {
     setErrors((current) => {
@@ -132,25 +120,7 @@ const LeadCaptureForm = ({ config = leadFormConfig }: LeadCaptureFormProps) => {
     }
   };
 
-  const handleIframeLoad = () => {
-    if (!awaitingSubmitRef.current) {
-      return;
-    }
-
-    awaitingSubmitRef.current = false;
-
-    if (timeoutRef.current) {
-      window.clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-
-    setValues(initialValues);
-    setErrors({});
-    setSubmitState("success");
-    setFeedbackMessage(config.successMessage);
-  };
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (submitState === "submitting") {
@@ -183,35 +153,48 @@ const LeadCaptureForm = ({ config = leadFormConfig }: LeadCaptureFormProps) => {
     setErrors({});
     setSubmitState("submitting");
     setFeedbackMessage("");
-    awaitingSubmitRef.current = true;
 
-    timeoutRef.current = window.setTimeout(() => {
-      if (!awaitingSubmitRef.current) {
-        return;
-      }
+    const payload = new URLSearchParams({
+      name: values.name.trim(),
+      contact: values.contact.trim(),
+      comment: values.comment.trim(),
+      consent: config.consentAcceptedValue,
+      company: values.company,
+      page_url: utmParams.pageUrl,
+      utm_source: utmParams.utmSource,
+      utm_medium: utmParams.utmMedium,
+      utm_campaign: utmParams.utmCampaign,
+    });
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), config.requestTimeoutMs);
 
-      awaitingSubmitRef.current = false;
+    try {
+      // Apps Script does not expose CORS headers, so a resolved opaque response
+      // confirms delivery without attempting to read its cross-origin body.
+      await fetch(config.endpointUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: payload,
+        signal: controller.signal,
+      });
+
+      setValues(initialValues);
+      setErrors({});
+      setSubmitState("success");
+      setFeedbackMessage(config.successMessage);
+    } catch {
       setSubmitState("error");
       setFeedbackMessage("Не удалось отправить заявку, попробуйте ещё раз.");
-    }, config.requestTimeoutMs);
-
-    formRef.current?.submit();
+    } finally {
+      window.clearTimeout(timeoutId);
+    }
   };
 
   return (
     <div className="text-left">
-      <iframe
-        title="Отправка заявки"
-        name={config.iframeName}
-        className="hidden"
-        onLoad={handleIframeLoad}
-      />
-
       <form
-        ref={formRef}
         action={config.endpointUrl || undefined}
         method="POST"
-        target={config.iframeName}
         onSubmit={handleSubmit}
         className="space-y-6"
       >
